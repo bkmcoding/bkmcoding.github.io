@@ -1,28 +1,28 @@
 .index.txt
 +-------------------------------------------------+-------------------------------------------------+
-|               WELCOME TO MY SITE                |                  [1] About Me                   |
+|               WELCOME TO MY SITE                |                  [1] About Me                   
 +-------------------------------------------------+-------------------------------------------------+
-|                                                 |                                                 |
-|  [1] About Me                                   |  I am [BKMCODING], a junior C.S. student        |
-|  [2] My Projects                                |  and my interests are machine learning,         |
-|  [3] Contact Info                               |  data visualization, and software development.  |
-|                                                 |                                                 |
+|                                                 |                                                 
+|  [1] About Me                                   |  I am [BKMCODING], a junior C.S. student        
+|  [2] My Projects                                |  and my interests are machine learning,         
+|  [3] Contact Info                               |  data visualization, and software development.  
+|                                                 |                                                 
 +-------------------------------------------------+-------------------------------------------------+
-|                                                 |                                                 |
-|  [2] My Projects                                |  I have a few projects that I am working on,    |
-|                                                 |  including a machine learning project that can  |
-|                                                 |  help visualize recipes and find whatever you   |
-|                                                 |  desire. As well as a few other practical       |
-|                                                 |  pieces of software you can find on github.     |
-|                                                 |  Ex. Report Management System, Mock Classroom   |
-|                                                 |  Web environment, fun Hackathon completions     |
-|                                                 |                                                 |
+|                                                 |                                                 
+|  [2] My Projects                                |  I have a few projects that I am working on,    
+|                                                 |  including a machine learning project that can  
+|                                                 |  help visualize recipes and find whatever you   
+|                                                 |  desire. As well as a few other practical       
+|                                                 |  pieces of software you can find on github.     
+|                                                 |  Ex. Report Management System, Mock Classroom   
+|                                                 |  Web environment, fun Hackathon completions     
+|                                                 |                                                 
 +-------------------------------------------------+-------------------------------------------------+
-|                                                 |                                                 |
-|  [3] Contact Info                               |  I dont really want you to contaact me, but     |
-|                                                 |  just search around on github and you will      |
-|                                                 |  find me projects. github.com/bkmcoding         |
-|                                                 |                                                 |
+|                                                 |                                                 
+|  [3] Contact Info                               |  I dont really want you to contaact me, but     
+|                                                 |  just search around on github and you will      
+|                                                 |  find me projects. github.com/bkmcoding         
+|                                                 |                                                 
 +-------------------------------------------------+-------------------------------------------------+
 
 
