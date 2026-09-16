@@ -1,13 +1,13 @@
 @charset 'UTF-8';
 
 :root {
-    --bg: #121212;
-    --fg: #eeeeee;
+    --bg: #1E201E;
+    --fg: #3C3D37;
     --text-muted: #aaaaaa;
-    --accent: #5eb0ff;
-    --accent-hover: #9bd0ff;
-    --border: #333333;
-    --bg-alt: #1e1e1e;
+    --accent: #eeeeee;
+    --accent-hover: #373945;
+    --border: #A56F63;
+    --bg-alt: #464858;
     --PAGE_WIDTH: 50rem;
 
     --BIG: 3rem;
@@ -19,13 +19,34 @@
     --font-sys: system-ui, "Segoe UI", Roboto, Helvetica;
 }
 
+@font-face {
+    font-family: '0xProtoNerdPropo';
+    src: url('./static/fonts/0xProtoNerdFontPropo-Regular.ttf') format('truetype');
+    font-display: swap;
+  }
+
+@font-face {
+    font-family: 'Lora';
+    src: url('./static/fonts/Lora-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DMSans';
+    src: url('./static/fonts/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: var(--font-sys);
-    color: var(--fg);
+    font-family: "Segoe UI";
+
     background-color: var(--bg);
     line-height: 1.6;
     margin: 0 auto;
@@ -45,15 +66,25 @@ h1, h2, h3, h4, h5, h6 {
 h1 { 
     font-size: 2.5rem; 
     letter-spacing: -0.02em;
+
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: oblique;
 }
 
-h3 { 
+h3,h4 { 
     font-size: var(--MED); 
     text-transform: uppercase; 
     letter-spacing: 0.1em; 
     color: var(--text-muted); 
     border-bottom: 1px solid var(--border);
     padding-bottom: var(--TNY);
+
+    font-family: "DMSans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
 
 h4 { 
@@ -63,6 +94,13 @@ h4 {
 p {
     margin-top: 0;
     margin-bottom: var(--MED);
+    letter-spacing: -0.02em;
+
+    font-family: "0xProtoNerdPropo", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 a {
@@ -71,6 +109,10 @@ a {
     text-decoration-thickness: 0.1em;
     text-underline-offset: 0.2em;
     transition: color 0.2s ease;
+    font-family: "0xProtoNerdPropo", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: oblique;
 }
 
 a:hover {
@@ -129,6 +171,10 @@ figure {
 figcaption {
     margin-top: 0.75rem;
     font-size: 0.95rem;
+    /* font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic; */
 }
 
 details {
@@ -141,6 +187,13 @@ details {
 
 details[open] {
     padding-bottom: var(--SML);
+}
+
+summary {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
 }
 
 footer {
