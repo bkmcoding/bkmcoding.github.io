@@ -45,7 +45,7 @@
 }
 
 body {
-    font-family: "0xProtoNerdPropo";
+    font-family: "Segoi UI";
 
     background-color: var(--bg);
     line-height: 1.6;
@@ -91,7 +91,7 @@ h4 {
     font-size: 1.25rem; 
 }
 
-p, ul {
+p {
     margin-top: 0;
     margin-bottom: var(--MED);
     letter-spacing: -0.02em;
@@ -101,6 +101,14 @@ p, ul {
     font-weight: 400;
     font-style: normal;
 
+}
+
+li {
+    letter-spacing: -0.02em;
+    font-family: "0xProtoNerdPropo", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 a {
