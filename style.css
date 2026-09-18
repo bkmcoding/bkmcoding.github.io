@@ -2,7 +2,6 @@
 
 :root {
     --bg: #1E201E;
-    --fg: #3C3D37;
     --text-muted: #aaaaaa;
     --accent: #eeeeee;
     --accent-hover: #373945;
@@ -11,6 +10,7 @@
     --PAGE_WIDTH: 50rem;
 
     --BIG: 3rem;
+    --LRG: 1.8rem;
     --MED: 1.1rem;
     --SML: 1rem;
     --QRT: 0.5rem;
@@ -19,11 +19,7 @@
     --font-sys: system-ui, "Segoe UI", Roboto, Helvetica;
 }
 
-@font-face {
-    font-family: '0xProtoNerdPropo';
-    src: url('./static/fonts/0xProtoNerdFontPropo-Regular.ttf') format('truetype');
-    font-display: swap;
-  }
+
 
 @font-face {
     font-family: 'Lora';
@@ -34,6 +30,12 @@
 @font-face {
     font-family: 'DMSans';
     src: url('./static/fonts/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: '0xProtoNerdPropo';
+    src: url('./static/fonts/0xProtoNerdFontPropo-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -64,26 +66,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { 
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     letter-spacing: -0.02em;
-
     font-family: "Lora", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 300;
     font-style: oblique;
+    font-size: var(--BIG);
+    /* white-space: nowrap; */
+    /* font-size: clamp(var(--LRG), 6.5vw, var(--BIG)); */
 }
 
 h3,h4 { 
-    font-size: var(--MED); 
-    text-transform: uppercase; 
-    letter-spacing: 0.1em; 
-    color: var(--text-muted); 
+    font-size: var(--MED);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
     border-bottom: 1px solid var(--border);
     padding-bottom: var(--TNY);
 
     font-family: "DMSans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 900;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -109,6 +113,7 @@ li {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    list-style-position: inside;
 }
 
 a {
@@ -136,6 +141,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: var(--QRT);
+    /* padding-top: var(--MED) */
     margin-top: var(--SML);
     font-size: var(--SML);
 }
@@ -147,6 +153,7 @@ nav a {
     background-color: var(--bg-alt);
     border: 1px solid var(--border);
     border-radius: 6px;
+    font-size: clamp(var(--SML), 1vw, var(--MED));
 }
 
 nav a:hover {
@@ -158,6 +165,7 @@ section {
 }
 
 img {
+    min-width: 75%;
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -168,7 +176,8 @@ img {
 figure {
     margin: 1.5rem 0;
     padding: var(--SML);
-    background-color: var(--bg-alt);
+    background-color: (from var(--bg-alt) r g b / 1);
+    background-blend-mode: 0.5;
     border-radius: 8px;
     border: 1px solid var(--border);
     text-align: center;
@@ -186,7 +195,7 @@ figcaption {
 }
 
 details {
-    background-color: var(--bg-alt);
+    /* background-color: var(--bg-alt); */
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: var(--QRT) var(--SML);
@@ -213,4 +222,30 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#lora {
+    font-family: "Lora", serif;
+    font-weight: 400;
+}
+
+#dmsans {
+    font-family: "DMSans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#ZxProto {
+    font-family: "0xProtoNerdPropo", monospace;
+    font-weight: 400;
+}
+
+
+@media (max-width: 600px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
