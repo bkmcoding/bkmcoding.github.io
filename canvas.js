@@ -6,20 +6,27 @@ const armCtx = armCanvas.getContext('2d');
 const cx = armCanvas.width / 2;
 const cy = armCanvas.height / 2;
 
-// R is the length of both arms (the radius of their circles)
-const R = 240;
+// Length of both arms
+const R = 120; 
 
-// Theta represents time/angle.
-// dTheta is the speed of the animation.
+// Theta is time/angle
+// Speed is measured in radians per millisecond
 let theta = 0;
-let dTheta = 0.03;
+const speed = 0.0018; 
 
-// Starting position: both arms pointing exactly to the right
-let lastX = cx + R + R;
+// Starting positions for arms
+let lastX = cx + R + R; 
 let lastY = cy;
 
-function draw() {
-    // Clear the moving arms canvas every frame
+let lastTime = 0;
+
+function draw(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    
+    const deltaTime = timestamp - lastTime;
+    lastTime = timestamp;
+
+    // Clear arms
     armCtx.clearRect(0, 0, armCanvas.width, armCanvas.height);
 
     // angle1 moves at speed theta. angle2 moves at speed Pi * theta.
@@ -51,7 +58,6 @@ function draw() {
     armCtx.lineWidth = 2;
     armCtx.stroke();
 
-    // center dot
     armCtx.fillStyle = 'white';
     [ {x: cx, y: cy}, {x: jointX, y: jointY}, {x: tipX, y: tipY} ].forEach(point => {
         armCtx.beginPath();
@@ -59,12 +65,13 @@ function draw() {
         armCtx.fill();
     });
 
-    // update
+    // Update
     lastX = tipX;
     lastY = tipY;
-    theta += dTheta;
+    theta += speed * deltaTime;
 
     requestAnimationFrame(draw);
 }
 
-draw();
+// Start the loop
+requestAnimationFrame(draw);
