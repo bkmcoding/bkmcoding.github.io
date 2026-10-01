@@ -232,7 +232,14 @@ footer {
     align-items: center;
 }
 
+.canvasContainer {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Keeps the stack perfectly square */
+}
+
 main canvas {
+    grid-area: 1 / 1;
     width: 100%;
     height: 100%;
     border: 1px solid var(--border);
