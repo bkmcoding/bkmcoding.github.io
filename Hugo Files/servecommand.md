@@ -1,0 +1,1 @@
+hugo serve --buildDrafts --noHTTPCache --cleanDestinationDir --disableFastRender --bind 0.0.0.0 --baseURL http://0.0.0.0 --port 8080
