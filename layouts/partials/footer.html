@@ -1,0 +1,5 @@
+<footer>
+  <p>{{ site.Params.footerText }}</p>
+  {{ with .Params.lastEdited | default site.Params.lastEdited }}<p>Last edited : {{ . }}</p>{{ end }}
+  <a href="{{ site.Params.licenseURL }}" target="_blank" rel="noopener noreferrer">{{ site.Params.licenseText }}</a>
+</footer>

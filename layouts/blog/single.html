@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="single">
+  <section>
+    <h3>{{ .Date.Format "01/02/06" }} - {{ .Title }}</h3>
+
+  {{ with .Params.cover }}
+    {{ $cover := $.Resources.GetMatch . }}
+    {{ with $cover }}
+      <figure class="article-cover">
+        <img src="{{ .RelPermalink }}" alt="{{ $.Params.coverAlt }}" loading="lazy">
+      </figure>
+    {{ end }}
+  {{ end }}
+
+    <div class="article-content">
+    {{ .Content }}
+    </div>
+    {{ partial "tags.html" . }}
+  </section>
+</article>
+{{ end }}

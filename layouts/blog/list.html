@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article>
+  {{ range $page := .RegularPages.ByDate.Reverse }}
+    <section>
+      <h3>{{ $page.Date.Format "01/02/06" }} - {{ $page.Title }}</h3>
+      {{ with $page.Params.cover }}
+        {{ $cover := $page.Resources.GetMatch . }}
+        {{ with $cover }}
+          <figure>
+            <img src="{{ .RelPermalink }}" alt="{{ $page.Params.coverAlt }}">
+          </figure>
+        {{ end }}
+      {{ end }}
+      {{ $page.Content }}
+      {{ with $page.Params.tags }}
+        <ul>
+          <li>
+            {{ range . }}#{{ . }} {{ end }}
+          </li>
+        </ul>
+      {{ end }}
+    </section>
+  {{ end }}
+
+  {{ .Content }}
+</article>
+{{ end }}

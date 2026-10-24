@@ -1,0 +1,14 @@
+<header>
+  <h1>{{ .Params.heading | default site.Title }}</h1>
+  <nav>
+    {{ range site.Menus.main }}
+      {{ $url := "" }}
+      {{ if .PageRef }}
+        {{ $url = .PageRef | relLangURL }}
+      {{ else }}
+        {{ $url = .URL | relURL }}
+      {{ end }}
+      <a href="{{ $url }}" rel="noopener noreferrer">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

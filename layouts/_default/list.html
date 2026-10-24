@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article>
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  {{ .Content }}
+  {{ if .RegularPages }}
+    <div class="entry-list">
+      {{ range .RegularPages }}
+        {{ partial "entry-card.html" (dict "page" . "showSummary" true) }}
+      {{ end }}
+    </div>
+  {{ end }}
+</article>
+{{ end }}

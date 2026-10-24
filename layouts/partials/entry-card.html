@@ -1,0 +1,33 @@
+{{ $page := .page }}
+{{ $showSummary := .showSummary | default true }}
+{{ $summary := or $page.Params.description $page.Summary }}
+<article class="entry-card">
+  {{ with $page.Params.cover }}
+    {{ $cover := $page.Resources.GetMatch . }}
+    {{ with $cover }}
+      <a class="entry-card-media" href="{{ $page.RelPermalink }}">
+        <img src="{{ .RelPermalink }}" alt="{{ $page.Params.coverAlt }}" loading="lazy">
+      </a>
+    {{ end }}
+  {{ end }}
+
+  <div class="entry-card-body">
+    <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+    {{ if or (eq $page.Section "blog") $page.Params.liveURL }}
+      <p class="entry-meta">
+      {{ if eq $page.Section "blog" }}
+        <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "Jan 2, 2006" }}</time>
+      {{ else if $page.Params.liveURL }}
+        <a href="{{ $page.Params.liveURL }}">Live build</a>
+      {{ end }}
+      </p>
+    {{ end }}
+
+    {{ if $showSummary }}
+      <p class="entry-summary">{{ $summary | plainify }}</p>
+    {{ end }}
+
+    {{ partial "tags.html" $page }}
+    <a class="more-link" href="{{ $page.RelPermalink }}">Read more</a>
+  </div>
+</article>

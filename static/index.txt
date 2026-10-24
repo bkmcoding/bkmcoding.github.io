@@ -19,9 +19,8 @@
 |                                                 |                                                 
 +-------------------------------------------------+-------------------------------------------------+
 |                                                 |                                                 
-|  [3] Contact Info                               |  I dont really want you to contaact me, but     
-|                                                 |  just search around on github and you will      
-|                                                 |  find me projects. github.com/bkmcoding         
+|  [3] Contact Info                               |  If you want you can contact me at               
+|                                                 |  bkmcoding@gmail.com or github.com/bkmcoding    
 |                                                 |                                                 
 +-------------------------------------------------+-------------------------------------------------+
 

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article>
+  <header class="page-header">
+    <h1>#{{ .Title }}</h1>
+  </header>
+  {{ .Content }}
+  <div class="entry-list">
+    {{ range .RegularPages.ByDate.Reverse }}
+      {{ partial "entry-card.html" (dict "page" . "showSummary" true) }}
+    {{ end }}
+  </div>
+</article>
+{{ end }}

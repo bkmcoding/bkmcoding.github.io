@@ -1,0 +1,70 @@
+baseURL = "https://bkmcoding.github.io/"
+defaultContentLanguage = "en"
+title = "bkmcoding"
+copyright = "bkmcoding"
+enableEmoji = true
+enableGitInfo = false
+summaryLength = 80
+uglyURLs = true
+relativeURLs = true
+
+[security]
+  allowContent = ["^text/html$", "^text/markdown$"]
+
+[taxonomies]
+  tag = "tags"
+
+[menus]
+  [[menus.main]]
+    name = "./index.html"
+    url = "/index.html"
+    weight = 10
+  [[menus.main]]
+    name = "./projects.html"
+    url = "/projects.html"
+    weight = 20
+  [[menus.main]]
+    name = "./blog.html"
+    url = "/blog.html"
+    weight = 30
+  [[menus.main]]
+    name = "./canvas.html"
+    url = "/canvas.html"
+    weight = 35
+  [[menus.main]]
+    name = "./colophon.html"
+    url = "/colophon.html"
+    weight = 40
+
+[params]
+  description = "bkmcoding's personal website"
+  lastEdited = "10/1/26"
+  footerText = "+1 website"
+  licenseURL = "https://creativecommons.org/licenses/by-sa/4.0/"
+  licenseText = "(CC) BY-SA 4.0"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[minify]
+  minifyOutput = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+  [[related.indices]]
+    name = "tags"
+    weight = 100

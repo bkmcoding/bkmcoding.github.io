@@ -1,0 +1,34 @@
+<section class="cat-block">
+  <h4>CHECKOUT THIS CAT</h4>
+  <figure>
+    <img src="{{ .Get "image" | relURL }}" alt="{{ .Get "alt" }}" loading="lazy">
+    {{ $captionOutside := eq (.Get "captionOutside") "true" }}
+    {{ if and (.Get "caption") (not $captionOutside) }}
+      <figcaption>{{ .Get "caption" | markdownify }}</figcaption>
+    {{ end }}
+  </figure>
+
+  {{ if $captionOutside }}
+    {{ with .Get "caption" }}{{ . | markdownify }}{{ end }}
+  {{ end }}
+
+  {{ if eq (.Get "divider") "true" }}
+    <hr size="3" noshade>
+  {{ end }}
+
+  {{ with .Get "breaks" }}
+    {{ range seq (int .) }}<br>{{ end }}
+  {{ end }}
+
+  {{ with .Get "reveal" }}
+    <details>
+      <summary>Click to reveal unspeakable horrors</summary>
+      <figure>
+        <img src="{{ . | relURL }}" alt="{{ $.Get "revealAlt" }}" loading="lazy">
+        {{ with $.Get "revealCaption" }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+    </details>
+  {{ end }}
+</section>
