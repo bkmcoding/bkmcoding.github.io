@@ -7,22 +7,22 @@ const cx = armCanvas.width / 2;
 const cy = armCanvas.height / 2;
 
 // Length of both arms
-const R = 120; 
+const R = 120;
 
 // Theta is time/angle
 // Speed is measured in radians per millisecond
 let theta = 0;
-const speed = 0.0018; 
+const speed = 0.0018;
 
 // Starting positions for arms
-let lastX = cx + R + R; 
+let lastX = cx + R + R;
 let lastY = cy;
 
 let lastTime = 0;
 
 function draw(timestamp) {
     if (!lastTime) lastTime = timestamp;
-    
+
     const deltaTime = timestamp - lastTime;
     lastTime = timestamp;
 
